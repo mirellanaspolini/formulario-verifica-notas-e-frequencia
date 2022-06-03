@@ -1,61 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="/style.css">
+   <script src="script.js"></script>
    <title>Trabalho POO</title>
 </head>
-
 <body>
-   <div class="principal">
-      <h3>PRIMEIRO SEMESTRE</h2>
+   <div class="principal" id="principal">
+      <h3>PRIMEIRO BIMESTRE</h3>
          <form>
             <div class="div-nota">
-               <input class="input" type="text" id="1-nota-1-semestre" value="">
+               <input class="input" required type="text" id="1-nota-1-bimestre" value="" placeholder="">
                <span>Primeira nota:</span>
             </div>
             <div class="div-nota">
-               <input class="input" type="text" id="2-nota-1-semestre" value="">
+               <input class="input" required type="text" id="2-nota-1-bimestre" value="">
                <span>Segunda nota:</span>
             </div>
             <div class="div-nota">
-               <input class="input" type="text" id="3-nota-1-semestre" value="">
+               <input class="input" required type="text" id="3-nota-1-bimestre" value="">
                <span>Terceira nota:</span>
             </div>
          </form>
 
-         <h3>SEGUNDO SEMESTRE</h2>
+         <h3>SEGUNDO BIMESTRE</h3>
             <form>
                <div class="div-nota">
-                  <input class="input" type="text" id="1-nota-2-semestre" value="">
+                  <input class="input" required type="text" id="1-nota-2-bimestre" value="">
                   <span>Primeira nota:</span>
                </div>
                <div class="div-nota">
-                  <input class="input" type="text" id="2-nota-2-semestre" value="">
+                  <input class="input" required type="text" id="2-nota-2-bimestre" value="">
                   <span>Segunda nota:</span>
                </div>
                <div class="div-nota">
-                  <input class="input" type="text" id="3-nota-2-semestre" value="">
+                  <input class="input" required type="text" id="3-nota-2-bimestre" value="">
                   <span>Terceira nota:</span>
                </div>
             </form>
 
             <form>
                <div class="box div-nota">
-                  <input class="input" type="text" id="num-faltas" value="">
+                  <input class="input" required type="text" id="num-faltas" value="">
                   <span>Número de faltas:</span>
                </div>
                <div class="box div-nota">
-                  <input class="input" type="text" id="num-aulas" value="">
+                  <input class="input" required type="text" id="num-aulas" value="">
                   <span>Número de aulas:</span>
                </div>
             </form>
             <button class="btn" onclick="verificar()">VERIFICAR</button>
 
-            <div class="resultado"></div>
+            <div id="resultado"></div>
    </div>
 </body>
 </html>

@@ -53,12 +53,12 @@ h3 {
   transition: 0.5s;
   opacity: 0.5;
 }
-.div-nota input:focus ~ span
-/* ,.porra-sla input:valid ~ span  */ {
+.div-nota input:focus ~ span,.div-nota input:valid ~ span{
   transform: translateY(-40px);
   font-size: 15px;
   opacity: 1;
 }
+
 .input:focus {
   border: none;
   outline: 2px solid #72a3e8;
@@ -77,6 +77,7 @@ h3 {
   font-weight: 500;
   float: right;
   border-radius: 50px;
+  margin-top: 14px;
 }
 .btn:hover {
   background-color: #bc7541;
