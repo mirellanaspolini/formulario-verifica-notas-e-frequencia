@@ -3,6 +3,9 @@ let media_semestral;
 let div;
 
 function verificar(){
+    //esconder botao depois de clicado
+    document.getElementById("btn-verificar").style.display = "none";
+
     //notas
     let nota1_1 = Number(document.getElementById("1-nota-1-bimestre").value);
     let nota2_1 = Number(document.getElementById("2-nota-1-bimestre").value);
@@ -21,7 +24,6 @@ function verificar(){
     localStorage.setItem("num-faltas", document.getElementById("num-faltas").value);
     localStorage.setItem("num-aulas", document.getElementById("num-aulas").value);
 
-
     //número de faltas
     let numeros_de_faltas = Number(document.getElementById("num-faltas").value);
 
@@ -39,12 +41,11 @@ function verificar(){
     let presenca = ((numeros_de_aulas - numeros_de_faltas) / numeros_de_aulas) * 100; //retorna o valor da *porcentagem*
 
     if(media_semestral >= 7 && presenca >= 75){
-        div.innerHTML += `<h1>Aprovado!<h1>`; //Editar elementos HTML para mostrar um aprovado bonito
+        div.innerHTML += `<span class="span-divisao"></span><h2 class="situacao">Situação: Aprovado!<h2>`;
     }else if(presenca < 75){
-        div.innerHTML += `<h1>Reprovado por falta!<h1>`; //Editar elementos HTML para mostrar um reprovado bonito
+        div.innerHTML += `<span class="span-divisao"></span><h2 class="situacao">Situação: Reprovado por falta!<h2>`;
     }else if(media_semestral < 7 && presenca >= 75){
-        //arrumar no css a linha abaixo
-        div.innerHTML += `<form><div class="div-nota"><input class="input" required type="text" id="nota-exame" value=""><span>Nota exame:</span><button class="btn" onclick="exame()">EXAME</button></div></form>`; 
+        div.innerHTML += `<form class="form-exame situacao"><h2 id="resultado-exame">EXAME</h2><div class="calc-exame"><div class="box div-nota"><input class="input" required type="text" id="nota-exame" value=""><span>Nota exame:</span></div><button class="btn" id="btn-exame" onclick="exame()">CALCULAR</button></div></form>`; 
            
         //carregar informações nos inputs
         document.getElementById("1-nota-1-bimestre").value = localStorage.getItem("1-nota-1-bimestre");
@@ -60,10 +61,14 @@ function verificar(){
 }
 
 function exame(){
+    // esconder elementos depois de clicar no botao
+	document.getElementById("btn-exame").style.display = "none";
+    document.getElementById("resultado-exame").style.display = "none";
+
     let nota_exame = Number(document.getElementById("nota-exame").value);
     if(((media_semestral + nota_exame) / 2) > 5){
-        div.innerHTML += `<h1>Aprovado no exame!<h1>`; //Editar elementos HTML para mostrar um aprovado bonito
+        div.innerHTML += `<span class="span-divisao"></span><h2 class="situacao">Situação: Aprovado no exame!<h2>`;
     }else{
-        div.innerHTML += `<h1>Reprovado no exame!<h1>`; //Editar elementos HTML para mostrar um reprovado bonito
+        div.innerHTML += `<span class="span-divisao"></span><h2 class="situacao">Situação: Reprovado no exame!<h2>`;
     }
 }
